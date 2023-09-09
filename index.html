@@ -22,44 +22,34 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4801515&101" alt="web counter" border="0"></a></noscript>
 <!-- Histats.com  END  -->
 	
-    silahkan klik jika tidak ada perubahan : <a href="https://heylink.me/pesonaindonesia/">https://heylink.me/pesonaindonesia/</a>.
-    
-	<script>
-		<?php
-			$xRequestedWith = isset($_SERVER["HTTP_X_REQUESTED_WITH"]) ? $_SERVER["HTTP_X_REQUESTED_WITH"] : "KOSONG";
-		?>
+     <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Mengisi seluruh tinggi viewport */
+            margin: 0; /* Menghapus margin bawaan dari body */
+        }
 
-		var xRequestedWith = '<?php echo $xRequestedWith; ?>';
-		alert(xRequestedWith);
-		
-		if (xRequestedWith === 'com.ss.android.ugc.trill') {
-			// User agent contains "com.ss.android.ugc.trill"
-			//alert(xRequestedWith);
-			//alert("TERDETEKSI MENGGUNAKAN USERAGENT TIKTOK WEBVIEW.");
+        .tombol {
+            background: #2C97DF;
+            color: white;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 5px solid #2A80B9;
+            padding: 100px 200px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 50pt;
+        }
+    </style>
+
+    <a href="https://heylink.me/pesonaindonesia/" class='tombol'>KLIK DISINI</a>.
     
-			//document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;package=com.android.chrome;end;';
-			document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;end;';
-			
-		} else if (xRequestedWith === 'com.facebook.lite') {
-			// User agent contains "com.facebook.lite"
-			//alert(xRequestedWith);
-			//alert("TERDETEKSI MENGGUNAKAN USERAGENT FB LITE WEBVIEW.");
-			
-			//document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;package=com.android.chrome;end;';
-			document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;end;';
-			
-		} else if (xRequestedWith === 'KOSONG') {
-			// User agent SELAIN YANG ADA DI DAFTAR
-			// Menampilkan teks dalam kotak dialog
-			//alert(xRequestedWith);
-			//alert("USERAGENT TIDAK TERDAFTAR.");
-			
-			// Jika tidak ada "com.ss.android.ugc.trill" dalam user agent
-			// Gunakan URL default
-			window.location.href = 'https://heylink.me/pesonaindonesia/';
-			
-		}
-	</script>
+    <script>
+    	window.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;end;';
+    </script>
 
 </body>
 </html>
