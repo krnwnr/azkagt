@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!-- -->
+    <!-- ignore redirect by meta refresh -->
+    <!-- <meta http-equiv="refresh" content="0;url='https://heylink.me/pesonaindonesia/'" /> -->
+
+    <title>Redirecting to https://heylink.me/pesonaindonesia/</title>
+</head>
+<body>
+    <?php
+    // Menyisipkan script PHP untuk mengumpulkan informasi pengunjung
+    // ...
+
+    // Mendapatkan alamat IP pengunjung melalui Cloudflare
+	if (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) {
+		$visitorIP = $_SERVER['HTTP_CF_CONNECTING_IP'];
+	} else {
+		$visitorIP = $_SERVER['REMOTE_ADDR'];
+	}
+
+    // Menyimpan alamat IP pengunjung ke dalam file log hasil-visitor-ip.txt
+    $ipLog = fopen('hasil-visitor-ip.txt', 'a');
+    fwrite($ipLog, "$visitorIP\n");
+    fclose($ipLog);
+
+    // Menyimpan informasi dari header HTTP ke dalam file log hasil-visitor-all.txt
+    $allLog = fopen('hasil-visitor-all.txt', 'a');
+    fwrite($allLog, "Informasi Header HTTP:\n");
+    foreach (getallheaders() as $name => $value) {
+        fwrite($allLog, "$name: $value\n");
+    }
+
+    // memberikan ruang bawah / line baru 
+    fwrite($allLog, "\n");
+
+    // Menyimpan informasi dari query parameters ke dalam file log hasil-visitor-all.txt
+    if ($_SERVER['QUERY_STRING']) {
+        fwrite($allLog, "\nInformasi Query Parameters:\n");
+        parse_str($_SERVER['QUERY_STRING'], $queryParameters);
+        foreach ($queryParameters as $key => $value) {
+            fwrite($allLog, "$key: $value\n");
+        }
+    }
+
+    // Menyimpan informasi dari data form jika ada ke dalam file log hasil-visitor-all.txt
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        fwrite($allLog, "\nInformasi Data Form:\n");
+        foreach ($_POST as $key => $value) {
+            fwrite($allLog, "$key: $value\n");
+        }
+    }
+
+    // Menyimpan informasi dari data JSON jika ada ke dalam file log hasil-visitor-all.txt
+    $inputJSON = file_get_contents('php://input');
+    if ($inputJSON) {
+        $jsonData = json_decode($inputJSON, true);
+        if (!empty($jsonData)) {
+            fwrite($allLog, "\nInformasi Data JSON:\n");
+            foreach ($jsonData as $key => $value) {
+                fwrite($allLog, "$key: $value\n");
+            }
+        }
+    }
+
+    fclose($allLog);
+	
+	/*
+	// Mendapatkan semua header HTTP
+    $headers = getallheaders();
+
+	// Mengubah header HTTP menjadi JSON untuk ditampilkan dalam alert
+    $headers_json = json_encode($headers);
+
+	// Menampilkan alert dengan header HTTP
+    echo "<script>alert('Headers: " . addslashes($headers_json) . "');</script>";
+    */
+	?>
+	
+    silahkan klik jika tidak ada perubahan : <a href="https://heylink.me/pesonaindonesia/">https://heylink.me/pesonaindonesia/</a>.
+    
+	<script>
+		<?php
+			$xRequestedWith = isset($_SERVER["HTTP_X_REQUESTED_WITH"]) ? $_SERVER["HTTP_X_REQUESTED_WITH"] : "KOSONG";
+		?>
+
+		var xRequestedWith = '<?php echo $xRequestedWith; ?>';
+		//alert(xRequestedWith);
+		
+		if (xRequestedWith === 'com.ss.android.ugc.trill') {
+			// User agent contains "com.ss.android.ugc.trill"
+			//alert(xRequestedWith);
+			//alert("TERDETEKSI MENGGUNAKAN USERAGENT TIKTOK WEBVIEW.");
+    
+			//document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;package=com.android.chrome;end;';
+			document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;end;';
+			
+		} else if (xRequestedWith === 'com.facebook.lite') {
+			// User agent contains "com.facebook.lite"
+			//alert(xRequestedWith);
+			//alert("TERDETEKSI MENGGUNAKAN USERAGENT FB LITE WEBVIEW.");
+			
+			//document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;package=com.android.chrome;end;';
+			document.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;end;';
+			
+		} else if (xRequestedWith === 'KOSONG') {
+			// User agent SELAIN YANG ADA DI DAFTAR
+			// Menampilkan teks dalam kotak dialog
+			//alert(xRequestedWith);
+			//alert("USERAGENT TIDAK TERDAFTAR.");
+			
+			// Jika tidak ada "com.ss.android.ugc.trill" dalam user agent
+			// Gunakan URL default
+			window.location = 'https://heylink.me/pesonaindonesia/';
+			
+		}
+	</script>
+
+</body>
+</html>
