@@ -30,7 +30,7 @@
 		?>
 
 		var xRequestedWith = '<?php echo $xRequestedWith; ?>';
-		//alert(xRequestedWith);
+		alert(xRequestedWith);
 		
 		if (xRequestedWith === 'com.ss.android.ugc.trill') {
 			// User agent contains "com.ss.android.ugc.trill"
@@ -56,7 +56,7 @@
 			
 			// Jika tidak ada "com.ss.android.ugc.trill" dalam user agent
 			// Gunakan URL default
-			window.location = 'https://heylink.me/pesonaindonesia/';
+			window.location.href = 'https://heylink.me/pesonaindonesia/';
 			
 		}
 	</script>
