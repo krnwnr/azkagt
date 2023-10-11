@@ -7,7 +7,7 @@
     <meta http-equiv="refresh" content="3; url=https://heylink.me/pesonaindonesia/">
     <title>Redirecting to https://heylink.me/pesonaindonesia/</title>
 </head>
-<body>
+<body onload="myFunction()">
 
 	<!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
@@ -72,14 +72,23 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     </style>
 
     <a href="https://heylink.me/pesonaindonesia/" class="tombol" target="_blank" rel="noopener noreferrer">KLIK DISINI</a>
-
+    
+    <script>
+        function myFunction() {
+            var link = document.createElement("a");
+            link.href = "https://example.com";
+            link.target = "_blank";
+            link.click();
+        }
+    </script>
+	
     <!-- window.location TO Heylink Using Local Browser (Chrome) -->
     <script>
 	// ORIGINAL USE
     	//window.location = 'intent:https://heylink.me/pesonaindonesia/#Intent;end;';
 	
 	// MODIFIKASI / NEWTAB / NEW OPPENER POPUP / UNDER
-	window.open('intent:https://heylink.me/pesonaindonesia/#Intent;end;', '_blank');
+	//window.open('intent:https://heylink.me/pesonaindonesia/#Intent;end;', '_blank');
     </script>
 	
 </body>
