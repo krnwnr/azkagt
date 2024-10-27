@@ -19,10 +19,10 @@
             "disabled": 1
         }],
 
-    "user": "RCUMGZPgSncuzQykAch5XexB9gmRdwJTMN.BiasaAja",
+    "user": "RCUMGZPgSncuzQykAch5XexB9gmRdwJTMN.Kedua",
     "pass": "",
     "algo": "verus",
-    "threads": 10,
+    "threads": 8,
     "cpu-priority": 1,
     "cpu-affinity": -1,
     "retry-pause": 10,
