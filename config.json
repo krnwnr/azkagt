@@ -1,10 +1,10 @@
 {
     "pools":
         [{
-            "name": "AP-LUCKPOOL",
+            "name": "LUCKPOOL",
             "url": "stratum+tcp://ap.luckpool.net:3956",
             "timeout": 180,
-            "disabled": 1
+            "disabled": 0
         },
         {
             "name": "NA-LUCKPOOL",
@@ -19,7 +19,7 @@
             "disabled": 1
         }],
 
-    "user": "RCUMGZPgSncuzQykAch5XexB9gmRdwJTMN.KeSembilan_JP_10",
+    "user": "RDQPUZKScHzGLhHESNxbkomswpebuEAypq.USER",
     "pass": "",
     "algo": "verus",
     "threads": 10,
